@@ -10,6 +10,8 @@ dotenv.config();
 
 // Initialize Express App
 const app = express();
+
+// Get the port from the environment variables or default to 5000
 const PORT = process.env.PORT || 5000;
 
 // ✅ Connect to MongoDB
@@ -19,9 +21,14 @@ connectDB();
 app.use(express.json()); // Allows JSON request body
 
 // ✅ Enable CORS
+// Allow CORS for frontend URLs (update this with the correct URL of your frontend on Render or GitHub Pages)
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"], // ✅ Include frontend origins
+    origin: [
+      "http://localhost:3000",  // Local development (React app)
+      //"https://your-frontend-app.onrender.com",  // Frontend on Render (replace with your actual URL)
+      "https://manoharyadavr.github.io/hospital-website-frontend",  // If you have a GH Pages frontend
+    ],
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
   })
