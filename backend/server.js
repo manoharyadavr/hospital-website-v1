@@ -27,7 +27,7 @@ app.use(
     origin: [
       "http://localhost:3000",  // Local development (React app)
       //"https://your-frontend-app.onrender.com",  // Frontend on Render (replace with your actual URL)
-      "https://manoharyadavr.github.io/hospital-website-frontend",  // If you have a GH Pages frontend
+      "https://github.com/manoharyadavr/hospital-website-frontend",  // If you have a GH Pages frontend
     ],
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
